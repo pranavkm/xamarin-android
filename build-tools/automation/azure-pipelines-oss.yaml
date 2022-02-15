@@ -175,15 +175,8 @@ stages:
     - template: yaml-templates/setup-ubuntu.yaml
 
     - template: yaml-templates/use-dot-net.yaml
-
-    - template: yaml-templates/use-dot-net.yaml
       parameters:
         version: $(DotNetCoreVersion)
-
-    - task: NuGetToolInstaller@1
-      displayName: 'Use NuGet 5.x'
-      inputs:
-        versionSpec: 5.x
 
     - script: >
         sudo apt remove -y --purge --auto-remove cmake &&
